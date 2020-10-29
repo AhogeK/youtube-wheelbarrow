@@ -25,3 +25,6 @@ hs_err_pid*
 *.iml
 
 client_secret.json
+
+.idea/
+target/
