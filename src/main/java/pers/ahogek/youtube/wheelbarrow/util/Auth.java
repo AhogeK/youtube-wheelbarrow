@@ -70,10 +70,7 @@ public class Auth {
         FileDataStoreFactory fileDataStoreFactory = new FileDataStoreFactory(new File(System.getProperty("user.home") + "/" + CREDENTIALS_DIRECTORY));
         DataStore<StoredCredential> datastore = fileDataStoreFactory.getDataStore(credentialDatastore);
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
-                HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, scopes).setCredentialDataStore(datastore)
-                .setAccessType("offline")
-                .setApprovalPrompt("auto")
-                .build();
+                HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, scopes).build();
 
         LocalServerReceiver localServerReceiver = new LocalServerReceiver.Builder().setPort(8080).build();
 
